@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Issues &amp; Policy Agenda — Bayati for El Cajon</title>
+<meta name="description" content="Osama Bayati's full policy agenda for El Cajon City Council District 1: youth success, term limits, small business support, senior fraud protection, Flock camera oversight, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Archivo+Expanded:wght@500;700;800&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tailwind.css">
+<style>
+/* ============================================================
+   BAYATI FOR EL CAJON — design system (see DESIGN.md)
+   Issues & Policy Agenda — voter-guide grammar
+   ============================================================
+   THESIS: policy presented like the voter guide it should be —
+   numbered positions, big amber numerals, clear hierarchies,
+   one position per section. Refuses the category default: walls
+   of dense prose with no structure.
+   OWN-WORLD: navy ink fields, signal amber numerals and rules,
+   warm voter-paper ground, white cards with hairline borders,
+   Archivo Expanded display + Public Sans body.
+   STORY: a voter can scan 8 positions in seconds and read the
+   details that matter to them.
+   FIRST VIEWPORT: navy page header — kicker, H1 "Issues &
+   Policy Agenda", lead. Amber numbered index below (jump links).
+   FORM: Persuade / Read hybrid — voter-guide world, numbered
+   policy-card system. Bilingual-ready (ES/AR in nav). Built on
+   Tailwind CSS v4; tokens mirror DESIGN.md 1:1 (src/input.css).
+   FINISH: unreviewed and undocumented is unfinished; this build
+   ends with the finish review, the verdict, DESIGN.md, and every
+   shipping raster carrying its provenance.
+   ============================================================ */
+html { scroll-behavior: smooth; }
+body { -webkit-font-smoothing: antialiased; text-wrap: pretty; }
+.skip-link { position: absolute; left: -999px; top: 0; z-index: 200; }
+.skip-link:focus { left: 0; }
+section[id] { scroll-margin-top: 88px; }
+
+@media (max-width: 900px) {
+  #nav-links {
+    position: fixed; inset: 0; top: 72px;
+    background: var(--color-ink);
+    flex-direction: column; align-items: flex-start; justify-content: flex-start;
+    gap: 0; padding: var(--spacing-6) var(--gutter, 24px);
+    transform: translateX(100%);
+    transition: transform 0.22s ease; z-index: 99;
+  }
+  .nav-open #nav-links { transform: translateX(0); }
+  #nav-links li { width: 100%; }
+  #nav-links a { color: var(--color-white); font-size: 1.25rem; padding: var(--spacing-4) 0; display: block; border-bottom: 1px solid rgba(255,255,255,.12); }
+  #nav-links a::after { display: none; }
+  #nav-links .btn { width: 100%; margin: var(--spacing-5) 0 0; justify-content: center; }
+}
+</style>
+</head>
+<body class="bg-paper text-ink font-body">
+<a class="skip-link bg-ink text-white font-semibold px-5 py-3 rounded-br-sm" href="#main">Skip to main content</a>
+
+<!-- ============ NAV ============ -->
+<header class="sticky top-0 z-50 bg-paper border-b border-mist" id="site-nav">
+  <div class="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[72px]">
+    <a class="wordmark" href="index.html">BAYATI<span class="period">.</span><span class="sub">for El Cajon</span></a>
+    <button class="lg:hidden w-11 h-11 border-2 border-ink rounded-sm bg-transparent cursor-pointer relative" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <span class="absolute left-2.5 right-2.5 h-0.5 bg-ink transition-all duration-200" style="top:13px"></span>
+      <span class="absolute left-2.5 right-2.5 h-0.5 bg-ink transition-all duration-200" style="top:21px"></span>
+      <span class="absolute left-2.5 right-2.5 h-0.5 bg-ink transition-all duration-200" style="top:29px"></span>
+    </button>
+    <nav aria-label="Main" class="hidden lg:block">
+      <ul class="flex items-center gap-6 list-none m-0 p-0" id="nav-links">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link active" href="issues-policy-agenda.html" aria-current="page">Issues</a></li>
+        <li><a class="nav-link" href="campaign-blueprint.html">Blueprint</a></li>
+        <li><a class="nav-link" href="my-team.html">Team</a></li>
+        <li><a class="nav-link" href="endorsements.html">Endorsements</a></li>
+        <li><a class="btn btn-primary" href="https://donorbox.org/bayati-for-el-cajon-city-council" target="_blank" rel="noopener">Donate</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<!-- ============ PAGE HEADER ============ -->
+<section class="bg-ink text-white relative overflow-hidden" aria-labelledby="page-title">
+  <div class="absolute -top-[140px] -right-[100px] w-[460px] h-[460px] rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(242,169,0,.13),transparent 65%)" aria-hidden="true"></div>
+  <div class="max-w-[1200px] mx-auto px-6 py-[clamp(4rem,9vw,6.5rem)] relative">
+    <p class="kicker on-navy">Bayati for El Cajon <span class="accent">·</span> District 1 <span class="accent">·</span> 2026</p>
+    <h1 id="page-title" class="font-display font-extrabold text-[clamp(2.4rem,5.5vw,4.2rem)] leading-[1.05] tracking-[-0.01em] mt-4">Issues &amp; <span class="text-amber">Policy Agenda</span></h1>
+    <p class="lead on-navy mt-5 max-w-[64ch]">The campaign stands firmly against empty, vague political rhetoric — and is committed to real results. Here is exactly where we stand and how we will deliver. Eight positions, in plain language, no fine print.</p>
+    <div class="inline-flex gap-2 mt-6" aria-label="Language selector">
+      <a class="text-[0.8rem] font-semibold tracking-[0.06em] uppercase px-3.5 py-2 border border-white/35 rounded-sm text-white no-underline hover:bg-white/15 transition-colors bg-amber border-amber text-ink" href="issues-policy-agenda.html" aria-current="true">English</a>
+      <a class="text-[0.8rem] font-semibold tracking-[0.06em] uppercase px-3.5 py-2 border border-white/35 rounded-sm text-white no-underline hover:bg-white/15 transition-colors" href="issues-policy-agenda.html?lang=es">Español</a>
+      <a class="text-[0.8rem] font-semibold tracking-[0.06em] uppercase px-3.5 py-2 border border-white/35 rounded-sm text-white no-underline hover:bg-white/15 transition-colors" href="issues-policy-agenda.html?lang=ar">العربية</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POLICY INDEX ============ -->
+<nav class="bg-paper border-b border-mist" aria-label="Policy positions">
+  <div class="max-w-[1200px] mx-auto px-6 py-6">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <a class="flex items-center gap-3 px-3 py-3 rounded-md no-underline text-ink border border-mist bg-white hover:border-amber transition-colors hover:shadow-[0_1px_2px_rgba(16,35,63,.08)]" href="#priority-1"><span class="font-display font-extrabold text-[1.2rem] text-amber min-w-[28px]" aria-hidden="true">01</span><span class="text-[0.85rem] font-semibold leading-snug">Prioritizing Youth Success</span></a>
+      <a class="flex items-center gap-3 px-3 py-3 rounded-md no-underline text-ink border border-mist bg-white hover:border-amber transition-colors hover:shadow-[0_1px_2px_rgba(16,35,63,.08)]" href="#priority-2"><span class="font-display font-extrabold text-[1.2rem] text-amber min-w-[28px]" aria-hidden="true">02</span><span class="text-[0.85rem] font-semibold leading-snug">Establishing Term Limits</span></a>
+      <a class="flex items-center gap-3 px-3 py-3 rounded-md no-underline text-ink border border-mist bg-white hover:border-amber transition-colors hover:shadow-[0_1px_2px_rgba(16,35,63,.08)]" href="#priority-3"><span class="font-display font-extrabold text-[1.2rem] text-amber min-w-[28px]" aria-hidden="true">03</span><span class="text-[0.85rem] font-semibold leading-snug">Streamlining Small Business Success</span></a>
+      <a class="flex items-center gap-3 px-3 py-3 rounded-md no-underline text-ink border border-mist bg-white hover:border-amber transition-colors hover:shadow-[0_1px_2px_rgba(16,35,63,.08)]" href="#priority-4"><span class="font-display font-extrabold text-[1.2rem] text-amber min-w-[28px]" aria-hidden="true">04</span><span class="text-[0.85rem] font-semibold leading-snug">Opposing Unnecessary Taxation</span></a>
+      <a class="flex items-center gap-3 px-3 py-3 rounded-md no-underline text-ink border border-mist bg-white hover:border-amber transition-colors hover:shadow-[0_1px_2px_rgba(16,35,63,.08)]" href="#priority-5"><span class="font-display font-extrabold text-[1.2rem] text-amber min-w-[28px]" aria-hidden="true">05</span><span class="text-[0.85rem] font-semibold leading-snug">Protecting Seniors &amp; Families from Fraud</span></a>
+      <a class="flex items-center gap-3 px-3 py-3 rounded-md no-underline text-ink border border-mist bg-white hover:border-amber transition-colors hover:shadow-[0_1px_2px_rgba(16,35,63,.08)]" href="#priority-6"><span class="font-display font-extrabold text-[1.2rem] text-amber min-w-[28px]" aria-hidden="true">06</span><span class="text-[0.85rem] font-semibold leading-snug">Flock Cameras: Safety Without Compromising Freedom</span></a>
+      <a class="flex items-center gap-3 px-3 py-3 rounded-md no-underline text-ink border border-mist bg-white hover:border-amber transition-colors hover:shadow-[0_1px_2px_rgba(16,35,63,.08)]" href="#priority-7"><span class="font-display font-extrabold text-[1.2rem] text-amber min-w-[28px]" aria-hidden="true">07</span><span class="text-[0.85rem] font-semibold leading-snug">City Services Above Partisan Politics</span></a>
+      <a class="flex items-center gap-3 px-3 py-3 rounded-md no-underline text-ink border border-mist bg-white hover:border-amber transition-colors hover:shadow-[0_1px_2px_rgba(16,35,63,.08)]" href="#priority-8"><span class="font-display font-extrabold text-[1.2rem] text-amber min-w-[28px]" aria-hidden="true">08</span><span class="text-[0.85rem] font-semibold leading-snug">Cost of Living &amp; Housing Stability</span></a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ POLICY 1 ============ -->
+<section class="py-[clamp(3.5rem,8vw,6rem)] border-b border-mist" id="priority-1" aria-labelledby="p1-title">
+  <div class="max-w-[1200px] mx-auto px-6 grid md:grid-cols-[80px_1fr] gap-[clamp(1.5rem,4vw,3rem)]">
+    <div class="policy-num md:sticky md:top-[120px] self-start" aria-hidden="true">01</div>
+    <div>
+      <span class="inline-block font-display text-[0.72rem] font-bold tracking-[0.16em] uppercase text-slate bg-white border border-mist px-3 py-1.5 rounded-sm">Campaign priority</span>
+      <h2 id="p1-title" class="font-display font-extrabold text-[clamp(1.7rem,3vw,2.4rem)] leading-tight mt-4">Prioritizing Youth Success</h2>
+      <p class="text-[1.125rem] font-semibold text-ink mt-4 leading-relaxed max-w-[70ch]">The world is shifting toward a multipolar structure, and in many rival nations, youth are deliberately protected from marginalization, misinformation, and neglect. Our priority must be to empower and guide young people — ensuring they have a clear, structured future to look forward to.</p>
+      <div class="text-slate mt-5 max-w-[72ch]">
+        <p class="mb-4">In our own city, <strong class="text-ink">nearly five out of ten students do not graduate from high school</strong> — the first step toward an educated, fulfilling life and a successful career. That is unacceptable.</p>
+        <p class="mb-4">I want our youth to grow up in a city where they are prioritized and uplifted — not marginalized. We are committed to creating the conditions and investments that enable your children to succeed, graduate, and build prosperous futures.</p>
+        <p class="mb-4">Our focus extends beyond stronger high school graduation rates. We will create more pathways for college-aged young adults to connect with <strong class="text-ink">paid internships, fellowships, and entry-level career opportunities</strong> that provide long-term growth and professional advancement.</p>
+        <p>By empowering the youth, we will ensure that our talent remains local, strengthening our workforce and helping small businesses grow with resilience. We are determined to build high-rises, invest boldly, and make El Cajon a bustling city once again.</p>
+      </div>
+      <span class="inline-flex items-center gap-1.5 mt-4 text-[0.78rem] font-bold tracking-[0.04em] uppercase text-good"><span aria-hidden="true">✓</span> Measurable: graduation rates, internship placement</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POLICY 2 ============ -->
+<section class="py-[clamp(3.5rem,8vw,6rem)] border-b border-mist" id="priority-2" aria-labelledby="p2-title">
+  <div class="max-w-[1200px] mx-auto px-6 grid md:grid-cols-[80px_1fr] gap-[clamp(1.5rem,4vw,3rem)]">
+    <div class="policy-num md:sticky md:top-[120px] self-start" aria-hidden="true">02</div>
+    <div>
+      <span class="inline-block font-display text-[0.72rem] font-bold tracking-[0.16em] uppercase text-slate bg-white border border-mist px-3 py-1.5 rounded-sm">Campaign priority</span>
+      <h2 id="p2-title" class="font-display font-extrabold text-[clamp(1.7rem,3vw,2.4rem)] leading-tight mt-4">Establishing Term Limits</h2>
+      <p class="text-[1.125rem] font-semibold text-ink mt-4 leading-relaxed max-w-[70ch]">Politicians who remain in office for a lifetime can easily become disconnected from the realities of the people they were elected to serve. Term limits are essential to prevent concentrated power, curb corruption, and ensure accountable leadership.</p>
+      <div class="text-slate mt-5 max-w-[72ch]">
+        <p class="mb-4"><strong class="text-ink">Gary Kendrick, at 72 years of age, has held the District 1 council seat for more than 25 years</strong> — longer than I have been alive. We have great respect for public officials who dedicate their lives to service, but we believe it is essential for leaders to move forward rather than remain in one position indefinitely.</p>
+        <p>Term limits protect accountability, promote corruption-free leadership, and make room for a new generation of scholars. Public office should be a duty to the community — <strong class="text-ink">not a permanent position of power.</strong></p>
+      </div>
+      <span class="inline-flex items-center gap-1.5 mt-4 text-[0.78rem] font-bold tracking-[0.04em] uppercase text-good"><span aria-hidden="true">✓</span> Measurable: term-limit ordinance on the agenda</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POLICY 3 ============ -->
+<section class="py-[clamp(3.5rem,8vw,6rem)] border-b border-mist" id="priority-3" aria-labelledby="p3-title">
+  <div class="max-w-[1200px] mx-auto px-6 grid md:grid-cols-[80px_1fr] gap-[clamp(1.5rem,4vw,3rem)]">
+    <div class="policy-num md:sticky md:top-[120px] self-start" aria-hidden="true">03</div>
+    <div>
+      <span class="inline-block font-display text-[0.72rem] font-bold tracking-[0.16em] uppercase text-slate bg-white border border-mist px-3 py-1.5 rounded-sm">Campaign priority</span>
+      <h2 id="p3-title" class="font-display font-extrabold text-[clamp(1.7rem,3vw,2.4rem)] leading-tight mt-4">Streamlining Small Business Success</h2>
+      <p class="text-[1.125rem] font-semibold text-ink mt-4 leading-relaxed max-w-[70ch]">Small businesses are the backbone of our local economy — creating nearly half of all jobs and driving opportunity in communities like El Cajon. We will make support simple and accessible.</p>
+      <div class="text-slate mt-5 max-w-[72ch]">
+        <p class="mb-4">Many young people want to start businesses but lack access to clear information, funding, and guidance. Too many businesses face confusing systems, burdensome paperwork, and cash flow challenges — especially in California, where regulations can be complex and difficult to navigate.</p>
+        <p>We will focus on <strong class="text-ink">connecting entrepreneurs to capital, clear information, and practical tools</strong> so they can start, grow, and succeed.</p>
+      </div>
+      <span class="inline-flex items-center gap-1.5 mt-4 text-[0.78rem] font-bold tracking-[0.04em] uppercase text-good"><span aria-hidden="true">✓</span> Measurable: business starts, loan readiness, job retention</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POLICY 4 ============ -->
+<section class="py-[clamp(3.5rem,8vw,6rem)] border-b border-mist" id="priority-4" aria-labelledby="p4-title">
+  <div class="max-w-[1200px] mx-auto px-6 grid md:grid-cols-[80px_1fr] gap-[clamp(1.5rem,4vw,3rem)]">
+    <div class="policy-num md:sticky md:top-[120px] self-start" aria-hidden="true">04</div>
+    <div>
+      <span class="inline-block font-display text-[0.72rem] font-bold tracking-[0.16em] uppercase text-slate bg-white border border-mist px-3 py-1.5 rounded-sm">Additional position</span>
+      <h2 id="p4-title" class="font-display font-extrabold text-[clamp(1.7rem,3vw,2.4rem)] leading-tight mt-4">Opposing Unnecessary Taxation</h2>
+      <p class="text-[1.125rem] font-semibold text-ink mt-4 leading-relaxed max-w-[70ch]">Residents are already dealing with rising costs across housing, utilities, and everyday expenses — adding new taxes only increases that pressure.</p>
+      <div class="text-slate mt-5 max-w-[72ch]">
+        <p class="mb-4">We will oppose new taxation <strong class="text-ink">unless it is clearly necessary, has a direct local benefit, and is fully transparent to the public.</strong></p>
+        <p>The priority is to make better use of existing funds so residents are not repeatedly asked to carry a heavier financial burden.</p>
+      </div>
+      <span class="inline-flex items-center gap-1.5 mt-4 text-[0.78rem] font-bold tracking-[0.04em] uppercase text-good"><span aria-hidden="true">✓</span> Commitment: no new taxes without direct local benefit</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POLICY 5 ============ -->
+<section class="py-[clamp(3.5rem,8vw,6rem)] border-b border-mist" id="priority-5" aria-labelledby="p5-title">
+  <div class="max-w-[1200px] mx-auto px-6 grid md:grid-cols-[80px_1fr] gap-[clamp(1.5rem,4vw,3rem)]">
+    <div class="policy-num md:sticky md:top-[120px] self-start" aria-hidden="true">05</div>
+    <div>
+      <span class="inline-block font-display text-[0.72rem] font-bold tracking-[0.16em] uppercase text-slate bg-white border border-mist px-3 py-1.5 rounded-sm">Additional position</span>
+      <h2 id="p5-title" class="font-display font-extrabold text-[clamp(1.7rem,3vw,2.4rem)] leading-tight mt-4">Protecting Seniors &amp; Families from Fraud</h2>
+      <p class="text-[1.125rem] font-semibold text-ink mt-4 leading-relaxed max-w-[70ch]">Elder residents have become some of the most frequent targets of fraud — organized scams exploit trust to steal life savings. In El Cajon, fraud ranges from grandparent scams and fake legal services to large-scale embezzlement.</p>
+      <div class="text-slate mt-5 max-w-[72ch]">
+        <p class="mb-4">I will address this by <strong class="text-ink">funding targeted scam prevention campaigns for seniors</strong>, creating a <strong class="text-ink">centralized city hub for reporting and guidance</strong>, and coordinating directly with law enforcement and prosecutors to shut down repeat offenders.</p>
+        <p>By improving early detection, simplifying reporting, and strengthening accountability, we can reduce fraud before it spreads and better protect our community.</p>
+      </div>
+      <span class="inline-flex items-center gap-1.5 mt-4 text-[0.78rem] font-bold tracking-[0.04em] uppercase text-good"><span aria-hidden="true">✓</span> Measurable: fraud reports resolved, prevention reach</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POLICY 6 ============ -->
+<section class="py-[clamp(3.5rem,8vw,6rem)] border-b border-mist" id="priority-6" aria-labelledby="p6-title">
+  <div class="max-w-[1200px] mx-auto px-6 grid md:grid-cols-[80px_1fr] gap-[clamp(1.5rem,4vw,3rem)]">
+    <div class="policy-num md:sticky md:top-[120px] self-start" aria-hidden="true">06</div>
+    <div>
+      <span class="inline-block font-display text-[0.72rem] font-bold tracking-[0.16em] uppercase text-slate bg-white border border-mist px-3 py-1.5 rounded-sm">Additional position</span>
+      <h2 id="p6-title" class="font-display font-extrabold text-[clamp(1.7rem,3vw,2.4rem)] leading-tight mt-4">Flock Cameras: Protecting Safety Without Compromising Freedom</h2>
+      <p class="text-[1.125rem] font-semibold text-ink mt-4 leading-relaxed max-w-[70ch]">El Cajon has implemented Flock license plate reader cameras to support local public safety — but their expansion raises important questions about oversight, data sharing, and long-term impact.</p>
+      <div class="text-slate mt-5 max-w-[72ch]">
+        <p class="mb-4">Flock Safety is an independent company funded in part by major investors connected to the broader surveillance and data analytics industry, adding to concerns about how surveillance technologies may be used.</p>
+        <p class="mb-4">We support effective, modern policing, but we will <strong class="text-ink">oppose unnecessary expansion of these systems without strong transparency, accountability, and local control.</strong></p>
+        <p>Our position is clear: protecting public safety must never come at the expense of the constitutional rights and liberties that define our community.</p>
+      </div>
+      <span class="inline-flex items-center gap-1.5 mt-4 text-[0.78rem] font-bold tracking-[0.04em] uppercase text-good"><span aria-hidden="true">✓</span> Position: oversight, transparency, local control</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POLICY 7 ============ -->
+<section class="py-[clamp(3.5rem,8vw,6rem)] border-b border-mist" id="priority-7" aria-labelledby="p7-title">
+  <div class="max-w-[1200px] mx-auto px-6 grid md:grid-cols-[80px_1fr] gap-[clamp(1.5rem,4vw,3rem)]">
+    <div class="policy-num md:sticky md:top-[120px] self-start" aria-hidden="true">07</div>
+    <div>
+      <span class="inline-block font-display text-[0.72rem] font-bold tracking-[0.16em] uppercase text-slate bg-white border border-mist px-3 py-1.5 rounded-sm">Additional position</span>
+      <h2 id="p7-title" class="font-display font-extrabold text-[clamp(1.7rem,3vw,2.4rem)] leading-tight mt-4">Putting City Services Above Partisan Politics</h2>
+      <p class="text-[1.125rem] font-semibold text-ink mt-4 leading-relaxed max-w-[70ch]">El Cajon residents shouldn't be paying for costly legal battles and politically driven spending that don't directly benefit the community.</p>
+      <div class="text-slate mt-5 max-w-[72ch]">
+        <p class="mb-4">We will push for <strong class="text-ink">stricter oversight</strong> and <strong class="text-ink">require clear justification before major spending decisions</strong> — ensuring city funds are directed toward public safety, infrastructure, and proven local NGOs that are actively strengthening development in our community.</p>
+      </div>
+      <span class="inline-flex items-center gap-1.5 mt-4 text-[0.78rem] font-bold tracking-[0.04em] uppercase text-good"><span aria-hidden="true">✓</span> Measurable: spending justifications, oversight reports</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POLICY 8 ============ -->
+<section class="py-[clamp(3.5rem,8vw,6rem)]" id="priority-8" aria-labelledby="p8-title">
+  <div class="max-w-[1200px] mx-auto px-6 grid md:grid-cols-[80px_1fr] gap-[clamp(1.5rem,4vw,3rem)]">
+    <div class="policy-num md:sticky md:top-[120px] self-start" aria-hidden="true">08</div>
+    <div>
+      <span class="inline-block font-display text-[0.72rem] font-bold tracking-[0.16em] uppercase text-slate bg-white border border-mist px-3 py-1.5 rounded-sm">Additional position</span>
+      <h2 id="p8-title" class="font-display font-extrabold text-[clamp(1.7rem,3vw,2.4rem)] leading-tight mt-4">Cost of Living &amp; Housing Stability</h2>
+      <p class="text-[1.125rem] font-semibold text-ink mt-4 leading-relaxed max-w-[70ch]">Housing in El Cajon is becoming increasingly difficult for working families to afford — as large outside investors buy up properties and drive rents beyond what local incomes can support.</p>
+      <div class="text-slate mt-5 max-w-[72ch]">
+        <p class="mb-4">When rents jump hundreds of dollars in a short period, it forces people out of the communities they've lived in for years. We will <strong class="text-ink">push for practical limits on bulk property purchasing</strong>, <strong class="text-ink">expand incentives for local ownership</strong>, and <strong class="text-ink">accelerate approval for attainable housing projects</strong> so supply can actually catch up.</p>
+        <p>The focus is simple: keep residents in their homes and make it realistic to live and build a future in this city.</p>
+      </div>
+      <span class="inline-flex items-center gap-1.5 mt-4 text-[0.78rem] font-bold tracking-[0.04em] uppercase text-good"><span aria-hidden="true">✓</span> Measurable: housing approvals, local ownership, rent stability</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="bg-ink text-white" aria-labelledby="cta-title">
+  <div class="max-w-[1200px] mx-auto px-6 py-[clamp(3.5rem,8vw,6rem)] grid lg:grid-cols-[1fr_auto] gap-6 items-center">
+    <div>
+      <h2 id="cta-title" class="font-display font-extrabold text-[clamp(1.8rem,3.5vw,2.6rem)] leading-tight text-white">Agree with where we stand?</h2>
+      <p class="text-fog mt-3 max-w-[52ch]">Help get the next generation elected. Every sign, mailer, and door-knock starts with support like yours.</p>
+    </div>
+    <div class="flex flex-wrap gap-4">
+      <a class="btn btn-primary" href="https://donorbox.org/bayati-for-el-cajon-city-council" target="_blank" rel="noopener">Donate now</a>
+      <a class="btn btn-ghost" href="mailto:scheduling@bayati4elcajon.com?subject=Volunteer">Volunteer</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-ink text-white border-t-4 border-amber">
+  <div class="max-w-[1200px] mx-auto px-6 pt-[clamp(3rem,7vw,5rem)] pb-6">
+    <div class="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-6 mb-7">
+      <div class="col-span-2 lg:col-span-1">
+        <a class="wordmark" href="index.html" style="color:#fff">BAYATI<span class="period">.</span></a>
+        <p class="text-fog text-[0.9rem] mt-3 max-w-[30ch]">Elect the next generation. Osama Bayati for El Cajon City Council, District 1.</p>
+      </div>
+      <div>
+        <h4 class="font-display text-[0.78rem] tracking-[0.14em] uppercase text-fog mb-4">Campaign</h4>
+        <ul class="list-none m-0 p-0 flex flex-col gap-3">
+          <li><a class="text-white no-underline text-[0.92rem] hover:text-amber transition-colors" href="index.html">Home</a></li>
+          <li><a class="text-white no-underline text-[0.92rem] hover:text-amber transition-colors" href="issues-policy-agenda.html">Issues &amp; Policy Agenda</a></li>
+          <li><a class="text-white no-underline text-[0.92rem] hover:text-amber transition-colors" href="campaign-blueprint.html">Campaign Blueprint</a></li>
+          <li><a class="text-white no-underline text-[0.92rem] hover:text-amber transition-colors" href="my-team.html">My Team</a></li>
+          <li><a class="text-white no-underline text-[0.92rem] hover:text-amber transition-colors" href="endorsements.html">Endorsements</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-display text-[0.78rem] tracking-[0.14em] uppercase text-fog mb-4">Get involved</h4>
+        <ul class="list-none m-0 p-0 flex flex-col gap-3">
+          <li><a class="text-white no-underline text-[0.92rem] hover:text-amber transition-colors" href="https://donorbox.org/bayati-for-el-cajon-city-council" target="_blank" rel="noopener">Donate</a></li>
+          <li><a class="text-white no-underline text-[0.92rem] hover:text-amber transition-colors" href="mailto:scheduling@bayati4elcajon.com?subject=Volunteer">Volunteer</a></li>
+          <li><a class="text-white no-underline text-[0.92rem] hover:text-amber transition-colors" href="https://www.bayati4elcajon.com/" target="_blank" rel="noopener">Register to vote</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-display text-[0.78rem] tracking-[0.14em] uppercase text-fog mb-4">Contact</h4>
+        <ul class="list-none m-0 p-0 flex flex-col gap-3">
+          <li><a class="text-white no-underline text-[0.92rem] hover:text-amber transition-colors" href="mailto:@bayati4elcajon.com">@bayati4elcajon.com</a></li>
+          <li><a class="text-white no-underline text-[0.92rem] hover:text-amber transition-colors" href="mailto:scheduling@bayati4elcajon.com">scheduling@bayati4elcajon.com</a></li>
+          <li><a class="text-white no-underline text-[0.92rem] hover:text-amber transition-colors" href="tel:+16194846327">(619) 484-6327</a></li>
+          <li><span class="text-fog">El Cajon, San Diego, CA</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/15 pt-5 flex flex-wrap gap-x-6 gap-y-3 justify-between items-center text-[0.8rem] text-fog">
+      <span class="font-bold tracking-[0.03em]">FUNDED BY OSAMA BAYATI, FOR CITY COUNCIL</span>
+      <span class="text-[0.75rem]">Paid for by Bayati for El Cajon City Council 2026.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.getElementById('nav-toggle');
+  var nav = document.getElementById('site-nav');
+  var links = document.getElementById('nav-links');
+  function setOpen(open){
+    nav.classList.toggle('nav-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  toggle.addEventListener('click', function(){ setOpen(!nav.classList.contains('nav-open')); });
+  links.addEventListener('click', function(e){
+    if(e.target.tagName === 'A') setOpen(false);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && nav.classList.contains('nav-open')) setOpen(false);
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add('visible'); io.unobserve(en.target); }
+    });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>

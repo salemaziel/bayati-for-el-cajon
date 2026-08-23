@@ -1,0 +1,39 @@
+# Python virtual environment
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node modules (if any)
+node_modules/
+
+# Build artifacts
+dist/
+build/
+*.log
+
+# Sensitive files
+.env
+.env.local
+
+# Screenshot test output
+shots/
+
+# Scraped content (not for production)
+content-source/
+
+# Shuffle CLI test output
+shuffle-run/
+
+# Backup files
+*.bak
+*.backup

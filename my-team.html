@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Team — Bayati for El Cajon</title>
+<meta name="description" content="Meet the team and mentors behind the Bayati for El Cajon campaign: Dr. Mark Kabban, Campaign Manager, and Edward Kashou, Campaign Treasurer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Archivo+Expanded:wght@500;700;800&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tailwind.css">
+<style>
+/* ============================================================
+   BAYATI FOR EL CAJON — design system (see DESIGN.md)
+   My Team — people, presented with respect
+   ============================================================
+   THESIS: team bios as campaign-poster cards — strong names,
+   clear roles, real accomplishments, no stock-photo filler.
+   OWN-WORLD: navy ink fields, signal amber rules, warm
+   voter-paper ground, white cards with hairline borders,
+   Archivo Expanded display + Public Sans body.
+   STORY: a voter sees the caliber of people standing behind
+   the candidate — Harvard-trained leadership, decades of
+   community service.
+   FORM: Persuade / Read hybrid — team-card system with role
+   chips, biography prose, and a join-the-team CTA.
+   Built on Tailwind CSS v4; tokens mirror DESIGN.md 1:1.
+   ============================================================ */
+html { scroll-behavior: smooth; }
+body { -webkit-font-smoothing: antialiased; text-wrap: pretty; }
+.skip-link { position: absolute; left: -999px; top: 0; z-index: 200; }
+.skip-link:focus { left: 0; }
+section[id] { scroll-margin-top: 88px; }
+
+@media (max-width: 900px) {
+  #nav-links {
+    position: fixed; inset: 0; top: 72px;
+    background: var(--color-ink);
+    flex-direction: column; align-items: flex-start; justify-content: flex-start;
+    gap: 0; padding: var(--spacing-6) var(--gutter, 24px);
+    transform: translateX(100%);
+    transition: transform 0.22s ease; z-index: 99;
+  }
+  .nav-open #nav-links { transform: translateX(0); }
+  #nav-links li { width: 100%; }
+  #nav-links a { color: var(--color-white); font-size: 1.25rem; padding: var(--spacing-4) 0; display: block; border-bottom: 1px solid rgba(255,255,255,.12); }
+  #nav-links a::after { display: none; }
+  #nav-links .btn { width: 100%; margin: var(--spacing-5) 0 0; justify-content: center; }
+}
+</style>
+</head>
+<body class="bg-paper text-ink font-body">
+<a class="skip-link bg-ink text-white font-semibold px-5 py-3 rounded-br-sm" href="#main">Skip to main content</a>
+
+<!-- ============ NAV ============ -->
+<header class="sticky top-0 z-50 bg-paper border-b border-mist" id="site-nav">
+  <div class="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[72px]">
+    <a class="wordmark" href="index.html">BAYATI<span class="period">.</span><span class="sub">for El Cajon</span></a>
+    <button class="lg:hidden w-11 h-11 border-2 border-ink rounded-sm bg-transparent cursor-pointer relative" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <span class="absolute left-2.5 right-2.5 h-0.5 bg-ink transition-all duration-200" style="top:13px"></span>
+      <span class="absolute left-2.5 right-2.5 h-0.5 bg-ink transition-all duration-200" style="top:21px"></span>
+      <span class="absolute left-2.5 right-2.5 h-0.5 bg-ink transition-all duration-200" style="top:29px"></span>
+    </button>
+    <nav aria-label="Main" class="hidden lg:block">
+      <ul class="flex items-center gap-6 list-none m-0 p-0" id="nav-links">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="issues-policy-agenda.html">Issues</a></li>
+        <li><a class="nav-link" href="campaign-blueprint.html">Blueprint</a></li>
+        <li><a class="nav-link active" href="my-team.html" aria-current="page">Team</a></li>
+        <li><a class="nav-link" href="endorsements.html">Endorsements</a></li>
+        <li><a class="btn btn-primary" href="https://donorbox.org/bayati-for-el-cajon-city-council" target="_blank" rel="noopener">Donate</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<!-- ============ PAGE HEADER ============ -->
+<section class="bg-ink text-white relative overflow-hidden" aria-labelledby="page-title">
+  <div class="absolute -top-[140px] -right-[100px] w-[460px] h-[460px] rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(242,169,0,.13),transparent 65%)" aria-hidden="true"></div>
+  <div class="max-w-[1200px] mx-auto px-6 py-[clamp(4rem,9vw,6.5rem)] relative">
+    <p class="kicker on-navy">Bayati for El Cajon <span class="accent">·</span> District 1 <span class="accent">·</span> 2026</p>
+    <h1 id="page-title" class="font-display font-extrabold text-[clamp(2.4rem,5.5vw,4.2rem)] leading-[1.05] tracking-[-0.01em] mt-4">The team behind <span class="text-amber">the movement</span></h1>
+    <p class="lead on-navy mt-5 max-w-[64ch]">Meet the people bringing decades of leadership, education, and community service to this campaign.</p>
+  </div>
+</section>
+
+<!-- ============ TEAM MEMBER 1 ============ -->
+<section class="py-[clamp(3.5rem,8vw,6rem)] border-b border-mist" id="mark-kabban" aria-labelledby="team1-title">
+  <div class="max-w-[1200px] mx-auto px-6 grid md:grid-cols-[240px_1fr] gap-[clamp(1.5rem,4vw,3rem)] items-start">
+    <div class="w-full max-w-[240px] mx-auto">
+      <div class="aspect-[4/5] bg-ink-2 border border-mist rounded-lg flex items-center justify-center" role="img" aria-label="Dr. Mark Kabban — Campaign Manager">
+        <span class="font-display font-extrabold text-[4rem] text-amber leading-none">MK</span>
+      </div>
+      <div class="mt-4 text-center md:text-left">
+        <div class="font-display font-extrabold text-[1.35rem] leading-tight">Dr. Mark Kabban</div>
+        <div class="text-[0.78rem] font-bold tracking-[0.12em] uppercase text-amber mt-1">Campaign Manager</div>
+      </div>
+    </div>
+    <div>
+      <h2 id="team1-title" class="sr-only">Dr. Mark Kabban</h2>
+      <div class="text-slate max-w-[72ch]">
+        <p class="mb-4">Dr. Mark Kabban holds a <strong class="text-ink">doctorate in Education Leadership from Harvard University</strong> and is an accomplished educator, leadership expert, and community advocate with a lifelong commitment to empowering young people and strengthening institutions. He is the founder of <strong class="text-ink">YALLA (Youth and Leaders Living Actively)</strong>, an organization dedicated to developing leadership and opportunity for refugee and migrant youth, and the founder of the <strong class="text-ink">Examined Leadership Collective</strong>, a practice focused on adult development and equity-centered leadership.</p>
+        <p class="mb-4">His work has earned national and international recognition, including the <strong class="text-ink">CNN Hero Award</strong>, Arab American "40 Under 40" honors, the Mead Fellowship, and recognition as a Top Five Young World Changer by DoSomething.org.</p>
+        <p class="mb-4">Across his career, Dr. Kabban has led leadership development and coaching initiatives in diverse settings — from U.S. public school systems and universities to international education networks, nonprofit organizations, and professional sports academies. His work is grounded in deliberately developmental leadership frameworks, with a focus on emotional resilience, equity, and institutional effectiveness. To date, he has coached and advised <strong class="text-ink">more than 100 leaders</strong> across K–12 districts, higher education, and mission-driven organizations.</p>
+        <p>Through his work, Dr. Kabban brings a powerful combination of academic rigor, real-world leadership, and a deep commitment to equity and community impact — making him a vital asset to the campaign team.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEAM MEMBER 2 ============ -->
+<section class="py-[clamp(3.5rem,8vw,6rem)] border-b border-mist" id="edward-kashou" aria-labelledby="team2-title">
+  <div class="max-w-[1200px] mx-auto px-6 grid md:grid-cols-[240px_1fr] gap-[clamp(1.5rem,4vw,3rem)] items-start">
+    <div class="w-full max-w-[240px] mx-auto">
+      <div class="aspect-[4/5] bg-ink-2 border border-mist rounded-lg flex items-center justify-center" role="img" aria-label="Edward Kashou — Campaign Treasurer">
+        <span class="font-display font-extrabold text-[4rem] text-amber leading-none">EK</span>
+      </div>
+      <div class="mt-4 text-center md:text-left">
+        <div class="font-display font-extrabold text-[1.35rem] leading-tight">Edward Kashou</div>
+        <div class="text-[0.78rem] font-bold tracking-[0.12em] uppercase text-amber mt-1">Campaign Treasurer</div>
+      </div>
+    </div>
+    <div>
+      <h2 id="team2-title" class="sr-only">Edward Kashou</h2>
+      <div class="text-slate max-w-[72ch]">
+        <p class="mb-4">Edward Kashou is an accomplished executive, entrepreneur, and community leader with <strong class="text-ink">decades of experience in business operations, finance, and strategic growth</strong>. He has built and led multiple successful enterprises across San Diego, demonstrating a consistent ability to strengthen organizations and guide them through expansion with discipline and vision.</p>
+        <p class="mb-4">Currently serving as a senior advisor and campaign manager, Edward brings deep operational insight and strategic leadership to the team. His background in hospitality, marketing, and large-scale operations allows him to support effective decision-making, organizational efficiency, and long-term planning.</p>
+        <p class="mb-4">Edward is also recognized for his longstanding commitment to community service, including <strong class="text-ink">more than 37 years of weekly homeless feeding initiatives in San Diego</strong> and over 30 years of service as a Board Member and Treasurer of Saint Demiana Church. In recognition of his impact, he received a <strong class="text-ink">Certificate of Special Congressional Recognition in 2016</strong> presented by U.S. Representative Scott Peters.</p>
+        <p>Known for his integrity, service, and results-driven leadership, Edward remains a trusted and valued contributor to the campaign.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUPPORTING MEMBERS ============ -->
+<section class="py-[clamp(3.5rem,8vw,6rem)] border-b border-mist" id="supporting-members" aria-labelledby="support-title">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <p class="kicker"><span class="accent">—</span> Supporting the campaign</p>
+    <h2 id="support-title" class="font-display font-extrabold text-[clamp(1.8rem,3.5vw,2.6rem)] leading-tight mt-4">More hands on deck</h2>
+    <div class="grid sm:grid-cols-3 gap-4 mt-8">
+      <div class="border border-mist bg-white rounded-md p-5">
+        <div class="font-display font-extrabold text-[1.15rem]">Jacob Mitchel</div>
+        <div class="text-[0.75rem] font-bold tracking-[0.1em] uppercase text-slate mt-1">Team member</div>
+      </div>
+      <div class="border border-mist bg-white rounded-md p-5">
+        <div class="font-display font-extrabold text-[1.15rem]">Sasha Miller</div>
+        <div class="text-[0.75rem] font-bold tracking-[0.1em] uppercase text-slate mt-1">Team member</div>
+      </div>
+      <div class="border border-mist bg-white rounded-md p-5">
+        <div class="font-display font-extrabold text-[1.15rem]">Edgar Alnzias</div>
+        <div class="text-[0.75rem] font-bold tracking-[0.1em] uppercase text-slate mt-1">Team member</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOIN THE TEAM ============ -->
+<section class="bg-amber text-ink" aria-labelledby="join-title">
+  <div class="max-w-[1200px] mx-auto px-6 py-[clamp(3rem,7vw,5rem)] text-center">
+    <h2 id="join-title" class="font-display font-extrabold text-[clamp(2rem,4vw,3rem)] leading-[1.05] tracking-[-0.01em]">JOIN THE TEAM!</h2>
+    <p class="font-semibold mt-4 max-w-[52ch] mx-auto">If you are interested and willing to be a reliable, communicative teammate who brings a positive attitude to collaboration, we'd love to work with you!</p>
+    <div class="mt-7">
+      <a class="btn btn-dark" href="mailto:scheduling@bayati4elcajon.com?subject=Join%20the%20team">Join the movement</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-ink text-white border-t-4 border-amber">
+  <div class="max-w-[1200px] mx-auto px-6 pt-[clamp(3rem,7vw,5rem)] pb-6">
+    <div class="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-6 mb-7">
+      <div class="col-span-2 lg:col-span-1">
+        <a class="wordmark" href="index.html" style="color:#fff">BAYATI<span class="period">.</span></a>
+        <p class="text-fog text-[0.9rem] mt-3 max-w-[30ch]">Elect the next generation. Osama Bayati for El Cajon City Council, District 1.</p>
+      </div>
+      <div>
+        <h4 class="font-display text-[0.78rem] tracking-[0.14em] uppercase text-fog mb-4">Campaign</h4>
+        <ul class="list-none m-0 p-0 flex flex-col gap-3">
+          <li><a class="text-white no-underline text-[0.92rem] hover:text-amber transition-colors" href="index.html">Home</a></li>
+          <li><a class="text-white no-underline text-[0.92rem] hover:text-amber transition-colors" href="issues-policy-agenda.html">Issues &amp; Policy Agenda</a></li>
+          <li><a class="text-white no-underline text-[0.92rem] hover:text-amber transition-colors" href="campaign-blueprint.html">Campaign Blueprint</a></li>
+          <li><a class="text-white no-underline text-[0.92rem] hover:text-amber transition-colors" href="my-team.html">My Team</a></li>
+          <li><a class="text-white no-underline text-[0.92rem] hover:text-amber transition-colors" href="endorsements.html">Endorsements</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-display text-[0.78rem] tracking-[0.14em] uppercase text-fog mb-4">Get involved</h4>
+        <ul class="list-none m-0 p-0 flex flex-col gap-3">
+          <li><a class="text-white no-underline text-[0.92rem] hover:text-amber transition-colors" href="https://donorbox.org/bayati-for-el-cajon-city-council" target="_blank" rel="noopener">Donate</a></li>
+          <li><a class="text-white no-underline text-[0.92rem] hover:text-amber transition-colors" href="mailto:scheduling@bayati4elcajon.com?subject=Volunteer">Volunteer</a></li>
+          <li><a class="text-white no-underline text-[0.92rem] hover:text-amber transition-colors" href="https://www.bayati4elcajon.com/" target="_blank" rel="noopener">Register to vote</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-display text-[0.78rem] tracking-[0.14em] uppercase text-fog mb-4">Contact</h4>
+        <ul class="list-none m-0 p-0 flex flex-col gap-3">
+          <li><a class="text-white no-underline text-[0.92rem] hover:text-amber transition-colors" href="mailto:osama@bayati4elcajon.com">osama@bayati4elcajon.com</a></li>
+          <li><a class="text-white no-underline text-[0.92rem] hover:text-amber transition-colors" href="mailto:scheduling@bayati4elcajon.com">scheduling@bayati4elcajon.com</a></li>
+          <li><a class="text-white no-underline text-[0.92rem] hover:text-amber transition-colors" href="tel:+16194846327">(619) 484-6327</a></li>
+          <li><span class="text-fog">El Cajon, San Diego, CA</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/15 pt-5 flex flex-wrap gap-x-6 gap-y-3 justify-between items-center text-[0.8rem] text-fog">
+      <span class="font-bold tracking-[0.03em]">FUNDED BY OSAMA BAYATI, FOR CITY COUNCIL</span>
+      <span class="text-[0.75rem]">Paid for by Bayati for El Cajon City Council 2026.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.getElementById('nav-toggle');
+  var nav = document.getElementById('site-nav');
+  var links = document.getElementById('nav-links');
+  function setOpen(open){
+    nav.classList.toggle('nav-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  toggle.addEventListener('click', function(){ setOpen(!nav.classList.contains('nav-open')); });
+  links.addEventListener('click', function(e){
+    if(e.target.tagName === 'A') setOpen(false);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && nav.classList.contains('nav-open')) setOpen(false);
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add('visible'); io.unobserve(en.target); }
+    });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
