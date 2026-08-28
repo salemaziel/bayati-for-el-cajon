@@ -1,0 +1,251 @@
+{
+  "tc_id": "TC-001-08-26-26-css-only-mobile-navigation",
+  "parent_tc": null,
+  "title": "CSS-only mobile navigation implementation",
+  "status": "deployed",
+  "priority": "high",
+  "created": "2026-08-26T12:38:45+00:00",
+  "updated": "2026-08-26T12:39:51+00:00",
+  "created_by": "Claude",
+  "project": "Bayati for El Cajon Campaign Website",
+  "description": {
+    "summary": "Replaced JavaScript-based mobile menu with pure CSS checkbox hack for better performance and reliability",
+    "motivation": "JavaScript-based toggle was unreliable; CSS-only approach is more performant and works without JS enabled",
+    "scope": "feature",
+    "detailed_design": null,
+    "breaking_changes": [],
+    "dependencies": []
+  },
+  "files_affected": [
+    {
+      "path": "index.html",
+      "action": "created",
+      "description": null,
+      "lines_added": null,
+      "lines_removed": null
+    },
+    {
+      "path": "endorsements.html",
+      "action": "created",
+      "description": null,
+      "lines_added": null,
+      "lines_removed": null
+    },
+    {
+      "path": "campaign-blueprint.html",
+      "action": "modified",
+      "description": null,
+      "lines_added": null,
+      "lines_removed": null
+    },
+    {
+      "path": "my-team.html",
+      "action": "created",
+      "description": null,
+      "lines_added": null,
+      "lines_removed": null
+    },
+    {
+      "path": "issues-policy-agenda.html",
+      "action": "created",
+      "description": null,
+      "lines_added": null,
+      "lines_removed": null
+    }
+  ],
+  "revision_history": [
+    {
+      "revision_id": "R1",
+      "timestamp": "2026-08-26T12:38:45+00:00",
+      "author": "Claude",
+      "summary": "TC record created",
+      "field_changes": [
+        {
+          "field": "status",
+          "action": "set",
+          "new_value": "planned",
+          "reason": "initial creation"
+        }
+      ]
+    },
+    {
+      "revision_id": "R2",
+      "timestamp": "2026-08-26T12:39:23+00:00",
+      "author": "Claude",
+      "summary": "status: planned -> in_progress",
+      "field_changes": [
+        {
+          "field": "status",
+          "action": "changed",
+          "old_value": "planned",
+          "new_value": "in_progress",
+          "reason": "Implementing CSS-only mobile nav and restructuring blueprint images"
+        }
+      ]
+    },
+    {
+      "revision_id": "R3",
+      "timestamp": "2026-08-26T12:39:23+00:00",
+      "author": "Claude",
+      "summary": "status: in_progress -> implemented",
+      "field_changes": [
+        {
+          "field": "status",
+          "action": "changed",
+          "old_value": "in_progress",
+          "new_value": "implemented",
+          "reason": "CSS checkbox hack applied to all 5 pages, nav DOM reordered for correct flex positioning, blueprint images moved into plan sections"
+        }
+      ]
+    },
+    {
+      "revision_id": "R4",
+      "timestamp": "2026-08-26T12:39:39+00:00",
+      "author": "Claude",
+      "summary": "+file index.html (created); +file endorsements.html (created); +file campaign-blueprint.html (modified); +file my-team.html (created); +file issues-policy-agenda.html (created); handoff: updated progress_summary; handoff: +next_step 'Verify mobile nav toggle works correctly on all pages'; handoff: +next_step 'Test responsive layout at various breakpoints (320px, 768px, 1024px)'; handoff: +next_step 'Consider adding hamburger animation (three lines to X) on toggle'",
+      "field_changes": [
+        {
+          "field": "files_affected",
+          "action": "added",
+          "new_value": {
+            "path": "index.html",
+            "action": "created"
+          },
+          "reason": null
+        },
+        {
+          "field": "files_affected",
+          "action": "added",
+          "new_value": {
+            "path": "endorsements.html",
+            "action": "created"
+          },
+          "reason": null
+        },
+        {
+          "field": "files_affected",
+          "action": "added",
+          "new_value": {
+            "path": "campaign-blueprint.html",
+            "action": "modified"
+          },
+          "reason": null
+        },
+        {
+          "field": "files_affected",
+          "action": "added",
+          "new_value": {
+            "path": "my-team.html",
+            "action": "created"
+          },
+          "reason": null
+        },
+        {
+          "field": "files_affected",
+          "action": "added",
+          "new_value": {
+            "path": "issues-policy-agenda.html",
+            "action": "created"
+          },
+          "reason": null
+        },
+        {
+          "field": "session_context.handoff.progress_summary",
+          "action": "changed",
+          "old_value": "",
+          "new_value": "CSS-only mobile nav implemented with checkbox hack. All 5 HTML pages updated with correct DOM order (checkbox before nav for CSS selector to work). Blueprint page restructured with images integrated into plan sections. Site deployed to Netlify.",
+          "reason": null
+        },
+        {
+          "field": "session_context.handoff.next_steps",
+          "action": "added",
+          "new_value": "Verify mobile nav toggle works correctly on all pages",
+          "reason": null
+        },
+        {
+          "field": "session_context.handoff.next_steps",
+          "action": "added",
+          "new_value": "Test responsive layout at various breakpoints (320px, 768px, 1024px)",
+          "reason": null
+        },
+        {
+          "field": "session_context.handoff.next_steps",
+          "action": "added",
+          "new_value": "Consider adding hamburger animation (three lines to X) on toggle",
+          "reason": null
+        }
+      ]
+    },
+    {
+      "revision_id": "R5",
+      "timestamp": "2026-08-26T12:39:51+00:00",
+      "author": "Claude",
+      "summary": "status: implemented -> tested",
+      "field_changes": [
+        {
+          "field": "status",
+          "action": "changed",
+          "old_value": "implemented",
+          "new_value": "tested",
+          "reason": "Verified on Netlify production site"
+        }
+      ]
+    },
+    {
+      "revision_id": "R6",
+      "timestamp": "2026-08-26T12:39:51+00:00",
+      "author": "Claude",
+      "summary": "status: tested -> deployed",
+      "field_changes": [
+        {
+          "field": "status",
+          "action": "changed",
+          "old_value": "tested",
+          "new_value": "deployed",
+          "reason": "Live at https://bayati-for-el-cajon.netlify.app"
+        }
+      ]
+    }
+  ],
+  "sub_tcs": [],
+  "test_cases": [],
+  "approval": {
+    "approved": false,
+    "approved_by": null,
+    "approved_date": null,
+    "approval_notes": "",
+    "test_coverage_status": "none"
+  },
+  "session_context": {
+    "current_session": {
+      "session_id": "session-1787747925-275449",
+      "platform": "claude_code",
+      "model": "unknown",
+      "started": "2026-08-26T12:38:45+00:00",
+      "last_active": "2026-08-26T12:39:51+00:00"
+    },
+    "handoff": {
+      "progress_summary": "CSS-only mobile nav implemented with checkbox hack. All 5 HTML pages updated with correct DOM order (checkbox before nav for CSS selector to work). Blueprint page restructured with images integrated into plan sections. Site deployed to Netlify.",
+      "next_steps": [
+        "Verify mobile nav toggle works correctly on all pages",
+        "Test responsive layout at various breakpoints (320px, 768px, 1024px)",
+        "Consider adding hamburger animation (three lines to X) on toggle"
+      ],
+      "blockers": [],
+      "key_context": [],
+      "files_in_progress": [],
+      "decisions_made": []
+    },
+    "session_history": []
+  },
+  "tags": [],
+  "related_tcs": [],
+  "notes": "",
+  "metadata": {
+    "project": "Bayati for El Cajon Campaign Website",
+    "created_by": "Claude",
+    "last_modified_by": "Claude",
+    "last_modified": "2026-08-26T12:39:51+00:00",
+    "estimated_effort": null
+  }
+}

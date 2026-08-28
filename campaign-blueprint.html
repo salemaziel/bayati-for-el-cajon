@@ -41,9 +41,9 @@ section[id] { scroll-margin-top: 88px; }
     transform: translateX(100%);
     transition: transform 0.22s ease; z-index: 99;
   }
-  .nav-open #nav-links { transform: translateX(0); }
+  #nav-toggle:checked ~ nav #nav-links { transform: translateX(0) !important; }
   #nav-links li { width: 100%; }
-  #nav-links a { color: var(--color-white); font-size: 1.25rem; padding: var(--spacing-4) 0; display: block; border-bottom: 1px solid rgba(255,255,255,.12); }
+  #nav-links a { color: var(--color-white); font-size: 1.25rem; padding: var(--spacing-4) 0 var(--spacing-4) var(--spacing-4); display: block; border-bottom: 1px solid rgba(255,255,255,.12); }
   #nav-links a::after { display: none; }
   #nav-links .btn { width: 100%; margin: var(--spacing-5) 0 0; justify-content: center; }
 }
@@ -56,12 +56,13 @@ section[id] { scroll-margin-top: 88px; }
 <header class="sticky top-0 z-50 bg-paper border-b border-mist" id="site-nav">
   <div class="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[72px]">
     <a class="wordmark" href="index.html">BAYATI<span class="period">.</span><span class="sub">for El Cajon</span></a>
-    <button class="lg:hidden w-11 h-11 border-2 border-ink rounded-sm bg-transparent cursor-pointer relative" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+    <input type="checkbox" id="nav-toggle" class="hidden" aria-label="Toggle menu">
+    <label for="nav-toggle" class="lg:hidden w-11 h-11 border-2 border-ink rounded-sm bg-transparent cursor-pointer relative" aria-hidden="true">
       <span class="absolute left-2.5 right-2.5 h-0.5 bg-ink transition-all duration-200" style="top:13px"></span>
       <span class="absolute left-2.5 right-2.5 h-0.5 bg-ink transition-all duration-200" style="top:21px"></span>
       <span class="absolute left-2.5 right-2.5 h-0.5 bg-ink transition-all duration-200" style="top:29px"></span>
-    </button>
-    <nav aria-label="Main" class="hidden lg:block">
+    </label>
+    <nav aria-label="Main">
       <ul class="flex items-center gap-6 list-none m-0 p-0" id="nav-links">
         <li><a class="nav-link" href="index.html">Home</a></li>
         <li><a class="nav-link" href="issues-policy-agenda.html">Issues</a></li>
@@ -85,20 +86,6 @@ section[id] { scroll-margin-top: 88px; }
   </div>
 </section>
 
-<!-- ============ BLUEPRINT OVERVIEW IMAGES ============ -->
-<section class="bg-paper border-b border-mist py-8">
-  <div class="max-w-[1200px] mx-auto px-6">
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="reveal">
-        <img src="images/blueprint/campaign-blueprint-1.jpg" alt="Campaign Blueprint Overview - Part 1" class="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow" loading="lazy" />
-      </div>
-      <div class="reveal">
-        <img src="images/blueprint/campaign-blueprint-2.jpg" alt="Campaign Blueprint Overview - Part 2" class="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow" loading="lazy" />
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ PLAN INDEX ============ -->
 <nav class="bg-paper border-b border-mist" aria-label="Blueprint sections">
   <div class="max-w-[1200px] mx-auto px-6 py-6">
@@ -112,50 +99,72 @@ section[id] { scroll-margin-top: 88px; }
 
 <!-- ============ PLAN 1 ============ -->
 <section class="py-[clamp(3.5rem,8vw,6rem)] border-b border-mist" id="plan-1" aria-labelledby="plan1-title">
-  <div class="max-w-[1200px] mx-auto px-6 grid md:grid-cols-[80px_1fr] gap-[clamp(1.5rem,4vw,3rem)]">
-    <div class="policy-num md:sticky md:top-[120px] self-start" aria-hidden="true">01</div>
-    <div>
-      <span class="inline-block font-display text-[0.72rem] font-bold tracking-[0.16em] uppercase text-slate bg-white border border-mist px-3 py-1.5 rounded-sm">Execution plan</span>
-      <h2 id="plan1-title" class="font-display font-extrabold text-[clamp(1.7rem,3vw,2.4rem)] leading-tight mt-4">Removing Barriers to Capital &amp; Long-Term Small Business Success</h2>
-      <p class="text-[1.125rem] font-semibold text-ink mt-4 leading-relaxed max-w-[70ch]">Strengthening local small businesses by improving access to capital, guidance, and execution support — addressing the cash-flow challenges that drive a large share of business failures in El Cajon.</p>
-      <h3 class="font-display font-bold text-[0.85rem] tracking-[0.14em] uppercase text-amber mt-7">The problem</h3>
-      <div class="text-slate mt-3 max-w-[72ch]">
-        <p class="mb-4">Many local business owners lack clear, reliable information when making high-risk financial decisions. They may be unaware of available financing programs, misunderstand loan terms, or take on debt without independent guidance.</p>
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="grid md:grid-cols-[80px_1fr] gap-[clamp(1.5rem,4vw,3rem)]">
+      <div class="policy-num md:sticky md:top-[120px] self-start" aria-hidden="true">01</div>
+      <div class="grid lg:grid-cols-[1fr_280px] gap-8 items-start">
+        <div>
+          <span class="inline-block font-display text-[0.72rem] font-bold tracking-[0.16em] uppercase text-slate bg-white border border-mist px-3 py-1.5 rounded-sm">Execution plan</span>
+          <h2 id="plan1-title" class="font-display font-extrabold text-[clamp(1.7rem,3vw,2.4rem)] leading-tight mt-4">Removing Barriers to Capital &amp; Long-Term Small Business Success</h2>
+          <p class="text-[1.125rem] font-semibold text-ink mt-4 leading-relaxed max-w-[70ch]">Strengthening local small businesses by improving access to capital, guidance, and execution support — addressing the cash-flow challenges that drive a large share of business failures in El Cajon.</p>
+          <h3 class="font-display font-bold text-[0.85rem] tracking-[0.14em] uppercase text-amber mt-7">The problem</h3>
+          <div class="text-slate mt-3 max-w-[72ch]">
+            <p class="mb-4">Many local business owners lack clear, reliable information when making high-risk financial decisions. They may be unaware of available financing programs, misunderstand loan terms, or take on debt without independent guidance.</p>
+          </div>
+          <h3 class="font-display font-bold text-[0.85rem] tracking-[0.14em] uppercase text-amber mt-7">How we deliver</h3>
+          <div class="text-slate mt-3 max-w-[72ch]">
+            <p class="mb-4">Create a <strong class="text-ink">centralized small-business access point</strong> that consolidates information on SBA loans, local lending programs, permitting requirements, and compliance steps in plain language — reducing reliance on informal or predatory advice.</p>
+            <p class="mb-4">Coordinate a <strong class="text-ink">structured, voluntary loan-readiness and review process</strong>: pre-application support such as cash-flow analysis, financial statement preparation, and side-by-side comparisons of financing options. Owners would be encouraged to seek independent, vetted guidance before committing to debt.</p>
+          </div>
+        </div>
+        <div class="reveal">
+          <img src="images/blueprint/campaign-blueprint-1.jpg" alt="Campaign Blueprint — Removing barriers to small business capital" class="w-full rounded-lg shadow-md sticky top-[120px]" loading="lazy" />
+        </div>
       </div>
-      <h3 class="font-display font-bold text-[0.85rem] tracking-[0.14em] uppercase text-amber mt-7">How we deliver</h3>
-      <div class="text-slate mt-3 max-w-[72ch]">
-        <p class="mb-4">Create a <strong class="text-ink">centralized small-business access point</strong> that consolidates information on SBA loans, local lending programs, permitting requirements, and compliance steps in plain language — reducing reliance on informal or predatory advice.</p>
-        <p class="mb-4">Coordinate a <strong class="text-ink">structured, voluntary loan-readiness and review process</strong>: pre-application support such as cash-flow analysis, financial statement preparation, and side-by-side comparisons of financing options. Owners would be encouraged to seek independent, vetted guidance before committing to debt.</p>
-        <p class="mb-4"><strong class="text-ink">Formalize partnerships</strong> with local banks, credit unions, and community development financial institutions to promote responsible lending — transparent evaluation standards and products appropriate for early-stage or undercapitalized businesses. The goal is not to guarantee loans, but to ensure owners fully understand risk, repayment timelines, and long-term impact.</p>
-        <p class="mb-4"><strong class="text-ink">Support long-term stability, not just business creation:</strong> operational support focused on budgeting, payroll planning, inventory management, and regulatory compliance — particularly during years three through five, when failure risk is highest.</p>
+      <div class="mt-6 max-w-[72ch]">
+        <div class="text-slate">
+          <p class="mb-4"><strong class="text-ink">Formalize partnerships</strong> with local banks, credit unions, and community development financial institutions to promote responsible lending — transparent evaluation standards and products appropriate for early-stage or undercapitalized businesses. The goal is not to guarantee loans, but to ensure owners fully understand risk, repayment timelines, and long-term impact.</p>
+          <p class="mb-4"><strong class="text-ink">Support long-term stability, not just business creation:</strong> operational support focused on budgeting, payroll planning, inventory management, and regulatory compliance — particularly during years three through five, when failure risk is highest.</p>
+        </div>
+        <h3 class="font-display font-bold text-[0.85rem] tracking-[0.14em] uppercase text-amber mt-7">How we measure it</h3>
+        <p class="text-slate mt-3 max-w-[72ch]">Clear outcomes: revenue consistency, on-time debt repayment, and job retention. By improving access to capital, information, and practical support at key decision points, El Cajon can help more small businesses remain viable, hire consistently, and contribute to a stronger local economy.</p>
       </div>
-      <h3 class="font-display font-bold text-[0.85rem] tracking-[0.14em] uppercase text-amber mt-7">How we measure it</h3>
-      <p class="text-slate mt-3 max-w-[72ch]">Clear outcomes: revenue consistency, on-time debt repayment, and job retention. By improving access to capital, information, and practical support at key decision points, El Cajon can help more small businesses remain viable, hire consistently, and contribute to a stronger local economy.</p>
     </div>
   </div>
 </section>
 
 <!-- ============ PLAN 2 ============ -->
 <section class="py-[clamp(3.5rem,8vw,6rem)] border-b border-mist" id="plan-2" aria-labelledby="plan2-title">
-  <div class="max-w-[1200px] mx-auto px-6 grid md:grid-cols-[80px_1fr] gap-[clamp(1.5rem,4vw,3rem)]">
-    <div class="policy-num md:sticky md:top-[120px] self-start" aria-hidden="true">02</div>
-    <div>
-      <span class="inline-block font-display text-[0.72rem] font-bold tracking-[0.16em] uppercase text-slate bg-white border border-mist px-3 py-1.5 rounded-sm">Execution plan</span>
-      <h2 id="plan2-title" class="font-display font-extrabold text-[clamp(1.7rem,3vw,2.4rem)] leading-tight mt-4">Supporting Student Success Beyond the Classroom</h2>
-      <p class="text-[1.125rem] font-semibold text-ink mt-4 leading-relaxed max-w-[70ch]">Investing in mentorship and career-exposure partnerships that give students consistent guidance, clear expectations, and a real-world context for their education — helping increase graduation rates and make them more meaningful.</p>
-      <h3 class="font-display font-bold text-[0.85rem] tracking-[0.14em] uppercase text-amber mt-7">The problem</h3>
-      <div class="text-slate mt-3 max-w-[72ch]">
-        <p class="mb-4">In El Cajon, <strong class="text-ink">nearly four in ten high school students do not graduate on time.</strong> This reflects more than academic difficulty. Many of these students are not struggling because they lack ability, but because they lack access to influential mentorship and consistent exposure to opportunity.</p>
-        <p class="mb-4">While districts govern schools, the city plays a critical role in shaping the environment that determines whether students stay engaged and graduate.</p>
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="grid md:grid-cols-[80px_1fr] gap-[clamp(1.5rem,4vw,3rem)]">
+      <div class="policy-num md:sticky md:top-[120px] self-start" aria-hidden="true">02</div>
+      <div class="grid lg:grid-cols-[1fr_280px] gap-8 items-start">
+        <div>
+          <span class="inline-block font-display text-[0.72rem] font-bold tracking-[0.16em] uppercase text-slate bg-white border border-mist px-3 py-1.5 rounded-sm">Execution plan</span>
+          <h2 id="plan2-title" class="font-display font-extrabold text-[clamp(1.7rem,3vw,2.4rem)] leading-tight mt-4">Supporting Student Success Beyond the Classroom</h2>
+          <p class="text-[1.125rem] font-semibold text-ink mt-4 leading-relaxed max-w-[70ch]">Investing in mentorship and career-exposure partnerships that give students consistent guidance, clear expectations, and a real-world context for their education — helping increase graduation rates and make them more meaningful.</p>
+          <h3 class="font-display font-bold text-[0.85rem] tracking-[0.14em] uppercase text-amber mt-7">The problem</h3>
+          <div class="text-slate mt-3 max-w-[72ch]">
+            <p class="mb-4">In El Cajon, <strong class="text-ink">nearly four in ten high school students do not graduate on time.</strong> This reflects more than academic difficulty. Many of these students are not struggling because they lack ability, but because they lack access to influential mentorship and consistent exposure to opportunity.</p>
+            <p class="mb-4">While districts govern schools, the city plays a critical role in shaping the environment that determines whether students stay engaged and graduate.</p>
+          </div>
+          <h3 class="font-display font-bold text-[0.85rem] tracking-[0.14em] uppercase text-amber mt-7">How we deliver</h3>
+          <div class="text-slate mt-3 max-w-[72ch]">
+            <p class="mb-4">Build a <strong class="text-ink">city-supported mentorship and career-exposure network</strong> in partnership with schools, community organizations, and local professionals — consistent, structured interaction between students and accomplished adults who help them understand the connection between education and real career pathways.</p>
+          </div>
+        </div>
+        <div class="reveal">
+          <img src="images/blueprint/campaign-blueprint-2.jpg" alt="Campaign Blueprint — Supporting student success beyond the classroom" class="w-full rounded-lg shadow-md sticky top-[120px]" loading="lazy" />
+        </div>
       </div>
-      <h3 class="font-display font-bold text-[0.85rem] tracking-[0.14em] uppercase text-amber mt-7">How we deliver</h3>
-      <div class="text-slate mt-3 max-w-[72ch]">
-        <p class="mb-4">Build a <strong class="text-ink">city-supported mentorship and career-exposure network</strong> in partnership with schools, community organizations, and local professionals — consistent, structured interaction between students and accomplished adults who help them understand the connection between education and real career pathways.</p>
-        <p class="mb-4">The city's role is not to run schools, but to reinforce stability, expectation, and opportunity around students so they develop in the best circumstances.</p>
-        <p class="mb-4">Why this matters personally: <em class="text-ink">"The person I have become today is, in large part, a reflection of the successful leaders I was fortunate enough to grow up around. That environment instilled discipline, broadened my perspective, and reinforced a level of confidence that many students in El Cajon are never allowed to develop."</em> — Osama Bayati</p>
+      <div class="mt-6 max-w-[72ch]">
+        <div class="text-slate">
+          <p class="mb-4">The city's role is not to run schools, but to reinforce stability, expectation, and opportunity around students so they develop in the best circumstances.</p>
+          <p class="mb-4">Why this matters personally: <em class="text-ink">"The person I have become today is, in large part, a reflection of the successful leaders I was fortunate enough to grow up around. That environment instilled discipline, broadened my perspective, and reinforced a level of confidence that many students in El Cajon are never allowed to develop."</em> — Osama Bayati</p>
+        </div>
+        <h3 class="font-display font-bold text-[0.85rem] tracking-[0.14em] uppercase text-amber mt-7">How we measure it</h3>
+        <p class="text-slate mt-3 max-w-[72ch]">Program-level metrics while respecting the boundaries of school governance: attendance, consistency of mentorship contact, and student goal completion.</p>
       </div>
-      <h3 class="font-display font-bold text-[0.85rem] tracking-[0.14em] uppercase text-amber mt-7">How we measure it</h3>
-      <p class="text-slate mt-3 max-w-[72ch]">Program-level metrics while respecting the boundaries of school governance: attendance, consistency of mentorship contact, and student goal completion.</p>
     </div>
   </div>
 </section>
@@ -252,21 +261,6 @@ section[id] { scroll-margin-top: 88px; }
 
 <script>
 (function(){
-  var toggle = document.getElementById('nav-toggle');
-  var nav = document.getElementById('site-nav');
-  var links = document.getElementById('nav-links');
-  function setOpen(open){
-    nav.classList.toggle('nav-open', open);
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-  }
-  toggle.addEventListener('click', function(){ setOpen(!nav.classList.contains('nav-open')); });
-  links.addEventListener('click', function(e){
-    if(e.target.tagName === 'A') setOpen(false);
-  });
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape' && nav.classList.contains('nav-open')) setOpen(false);
-  });
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(en){
       if(en.isIntersecting){ en.target.classList.add('visible'); io.unobserve(en.target); }

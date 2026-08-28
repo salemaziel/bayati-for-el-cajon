@@ -47,9 +47,9 @@ section[id] { scroll-margin-top: 88px; }
     transform: translateX(100%);
     transition: transform 0.22s ease; z-index: 99;
   }
-  .nav-open #nav-links { transform: translateX(0); }
+  #nav-toggle:checked ~ nav #nav-links { transform: translateX(0) !important; }
   #nav-links li { width: 100%; }
-  #nav-links a { color: var(--color-white); font-size: 1.25rem; padding: var(--spacing-4) 0; display: block; border-bottom: 1px solid rgba(255,255,255,.12); }
+  #nav-links a { color: var(--color-white); font-size: 1.25rem; padding: var(--spacing-4) 0 var(--spacing-4) var(--spacing-4); display: block; border-bottom: 1px solid rgba(255,255,255,.12); }
   #nav-links a::after { display: none; }
   #nav-links .btn { width: 100%; margin: var(--spacing-5) 0 0; justify-content: center; }
 }
@@ -62,12 +62,13 @@ section[id] { scroll-margin-top: 88px; }
 <header class="sticky top-0 z-50 bg-paper border-b border-mist" id="site-nav">
   <div class="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[72px]">
     <a class="wordmark" href="index.html">BAYATI<span class="period">.</span><span class="sub">for El Cajon</span></a>
-    <button class="lg:hidden w-11 h-11 border-2 border-ink rounded-sm bg-transparent cursor-pointer relative" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+    <input type="checkbox" id="nav-toggle" class="hidden" aria-label="Toggle menu">
+    <label for="nav-toggle" class="lg:hidden w-11 h-11 border-2 border-ink rounded-sm bg-transparent cursor-pointer relative" aria-hidden="true">
       <span class="absolute left-2.5 right-2.5 h-0.5 bg-ink transition-all duration-200" style="top:13px"></span>
       <span class="absolute left-2.5 right-2.5 h-0.5 bg-ink transition-all duration-200" style="top:21px"></span>
       <span class="absolute left-2.5 right-2.5 h-0.5 bg-ink transition-all duration-200" style="top:29px"></span>
-    </button>
-    <nav aria-label="Main" class="hidden lg:block">
+    </label>
+    <nav aria-label="Main">
       <ul class="flex items-center gap-6 list-none m-0 p-0" id="nav-links">
         <li><a class="nav-link" href="index.html">Home</a></li>
         <li><a class="nav-link active" href="issues-policy-agenda.html" aria-current="page">Issues</a></li>
@@ -313,21 +314,6 @@ section[id] { scroll-margin-top: 88px; }
 
 <script>
 (function(){
-  var toggle = document.getElementById('nav-toggle');
-  var nav = document.getElementById('site-nav');
-  var links = document.getElementById('nav-links');
-  function setOpen(open){
-    nav.classList.toggle('nav-open', open);
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-  }
-  toggle.addEventListener('click', function(){ setOpen(!nav.classList.contains('nav-open')); });
-  links.addEventListener('click', function(e){
-    if(e.target.tagName === 'A') setOpen(false);
-  });
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape' && nav.classList.contains('nav-open')) setOpen(false);
-  });
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(en){
       if(en.isIntersecting){ en.target.classList.add('visible'); io.unobserve(en.target); }

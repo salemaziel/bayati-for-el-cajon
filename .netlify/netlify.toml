@@ -9,7 +9,6 @@ redirects = []
 [build]
 publish = "/home/hermes/workspaces/bayati-el-cajon-website"
 publishOrigin = "default"
-base = "/home/hermes/workspaces/bayati-el-cajon-website"
 
 [build.environment]
 

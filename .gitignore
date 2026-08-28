@@ -37,3 +37,9 @@ shuffle-run/
 # Backup files
 *.bak
 *.backup
+
+# Netlify CLI plugin cache
+.netlify/plugins/
+
+# Raw scraped source site (110M — reference only, not part of the build)
+site-raw/
