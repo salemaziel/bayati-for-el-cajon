@@ -1,14 +1,10 @@
 {
   "name": "bayati-el-cajon-website",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tailwindcss -i src/input.css -o assets/tailwind.css --minify",
+    "dev": "tailwindcss -i src/input.css -o assets/tailwind.css --watch"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.3",
     "tailwindcss": "^4.3.3"

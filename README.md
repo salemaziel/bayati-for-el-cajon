@@ -28,15 +28,26 @@ vague "change" slogans).
 | `src/input.css` | Tailwind v4 theme — tokens mirror DESIGN.md 1:1 |
 | `assets/tailwind.css` | Compiled CSS (minified) |
 | `assets/photos/` | Real images from the live campaign site (candidate portrait, yard-sign graphics) |
-| `shuffle-run/` | Parallel reference: Shuffle CLI (Claude Opus 5) generated version + screenshot |
-| `shots/` | Desktop/mobile verification screenshots |
-| `content-source/` | Raw scraped Google Sites pages + rendered text extraction |
+| `images/endorsements/` | Endorsement logos and portraits used by `endorsements.html` |
+| `package.json` / `package-lock.json` | Local-only Tailwind CSS build tooling; no Node application runtime |
 
 ## Build
 
+The published site is static HTML. The compiled `assets/tailwind.css` is committed,
+so it can be opened or deployed without installing Node packages.
+
+If you change `src/input.css` or the HTML class names, install the pinned development
+dependencies once and rebuild the stylesheet:
+
 ```bash
-npm install -D tailwindcss @tailwindcss/cli
-npx @tailwindcss/cli -i src/input.css -o assets/tailwind.css --minify
+npm ci
+npm run build
+```
+
+For local stylesheet editing:
+
+```bash
+npm run dev
 ```
 
 Open `index.html` directly in a browser (no server needed).
